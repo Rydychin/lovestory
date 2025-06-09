@@ -24,7 +24,10 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
 
     // Simulate a brief loading time for better UX
     setTimeout(() => {
-      if (password === correctPassword) {
+      // Get the stored password or use default
+      const storedPassword = localStorage.getItem("anniversary-password") || correctPassword;
+      
+      if (password === storedPassword) {
         localStorage.setItem("anniversary-access", "granted");
         onAccessGranted();
       } else {
