@@ -6,11 +6,15 @@ import MemoriesSection from "@/components/memories-section";
 import TimelineSection from "@/components/timeline-section";
 import { Heart } from "lucide-react";
 
-export default function Home() {
+interface HomeProps {
+  onLogout?: () => void;
+}
+
+export default function Home({ onLogout }: HomeProps) {
   return (
     <div className="font-inter">
       <FloatingHearts />
-      <Navigation />
+      <Navigation onLogout={onLogout} />
       <HeroSection />
       <LoveLetterSection />
       <MemoriesSection />

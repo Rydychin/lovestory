@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { Heart, Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import SettingsModal from "@/components/settings-modal";
 
-export default function Navigation() {
+interface NavigationProps {
+  onLogout?: () => void;
+}
+
+export default function Navigation({ onLogout }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+    if (onLogout) {
+      onLogout();
+    }
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -27,7 +38,7 @@ export default function Navigation() {
             Our Story
           </motion.div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             <button 
               onClick={() => scrollToSection("hero")}
               className="text-gray-700 hover:text-deep-rose transition-colors"
@@ -52,6 +63,7 @@ export default function Navigation() {
             >
               Our Journey
             </button>
+            <SettingsModal onLogout={handleLogout} />
           </div>
           
           <button 
@@ -94,6 +106,9 @@ export default function Navigation() {
             >
               Our Journey
             </button>
+            <div className="pt-4 border-t border-rose-gold/20">
+              <SettingsModal onLogout={handleLogout} />
+            </div>
           </motion.div>
         )}
       </div>
