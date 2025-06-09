@@ -49,7 +49,7 @@ npm run dev
 
 ## Step 7: Open in Browser
 - Open your web browser
-- Go to: `http://localhost:5000`
+- Go to: `http://localhost:3000` (or check terminal for the actual port)
 - Enter password: `ourlove2024`
 
 ## You're Done!
