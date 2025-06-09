@@ -18,7 +18,6 @@ export default function HeroSection() {
           className="w-full h-full object-cover" 
         />
       </div>
-      
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -39,7 +38,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             Three Months of
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-rose-gold to-warm-purple">
+            <span className="block bg-clip-text bg-gradient-to-r from-rose-gold to-warm-purple text-[#bf215c]">
               Pure Love
             </span>
           </motion.h1>
@@ -80,7 +79,6 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-      
       {/* Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-deep-rose"
