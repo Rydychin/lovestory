@@ -56,47 +56,14 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Try different ports for local development
-  const tryPort = (port: number): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      const serverInstance = server.listen({
-        port,
-        host: "0.0.0.0",
-      }, () => {
-        log(`serving on port ${port}`);
-        console.log(`\n🎉 Anniversary website is running!`);
-        console.log(`📍 Open in browser: http://localhost:${port}`);
-        console.log(`🔑 Password: ourlove2024`);
-        console.log(`\n❤️  Made with love for your 3-month anniversary\n`);
-        resolve();
-      });
-      
-      serverInstance.on('error', (err: any) => {
-        if (err.code === 'EADDRINUSE') {
-          reject(new Error(`Port ${port} is busy`));
-        } else {
-          reject(err);
-        }
-      });
-    });
-  };
-
-  // Try ports 3000, 3001, 3002, etc. until we find one that works
-  const startServer = async () => {
-    const ports = [3000, 3001, 3002, 3003, 5000, 5001, 5002, 8000, 8080];
-    
-    for (const port of ports) {
-      try {
-        await tryPort(port);
-        return;
-      } catch (error) {
-        console.log(`Port ${port} is busy, trying next...`);
-      }
-    }
-    
-    console.error('Could not find an available port. Please close other applications and try again.');
-    process.exit(1);
-  };
-
-  await startServer();
+  // ALWAYS serve the app on port 5000
+  // this serves both the API and the client.
+  // It is the only port that is not firewalled.
+  const port = 5000;
+  server.listen({
+    port,
+    host: "0.0.0.0",
+  }, () => {
+    log(`serving on port ${port}`);
+  });
 })();
