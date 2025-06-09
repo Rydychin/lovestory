@@ -74,13 +74,11 @@ export default function TimelineSection() {
                         </h3>
                         <p className="text-gray-700">{item.description}</p>
                       </div>
-                      <motion.div 
+                      <div 
                         className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ duration: 0.2 }}
                       >
                         <Icon className="w-4 h-4 text-white" fill="currentColor" />
-                      </motion.div>
+                      </div>
                       <div className="w-1/2 pl-8">
                         <motion.img 
                           src={item.image}
@@ -102,13 +100,11 @@ export default function TimelineSection() {
                           transition={{ duration: 0.3 }}
                         />
                       </div>
-                      <motion.div 
+                      <div 
                         className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ duration: 0.2 }}
                       >
                         <Icon className="w-4 h-4 text-white" fill="currentColor" />
-                      </motion.div>
+                      </div>
                       <div className="w-1/2 pl-8">
                         <h3 className="font-playfair text-2xl font-semibold text-deep-rose mb-2">
                           {item.month}

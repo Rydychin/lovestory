@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Settings, Lock, LogOut, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 
 interface SettingsModalProps {
   onLogout: () => void;
@@ -83,6 +83,9 @@ export default function SettingsModal({ onLogout }: SettingsModalProps) {
             <Settings className="w-6 h-6" />
             Settings
           </DialogTitle>
+          <DialogDescription>
+            Manage your anniversary website password and access settings.
+          </DialogDescription>
         </DialogHeader>
         
         <div className="space-y-6">
