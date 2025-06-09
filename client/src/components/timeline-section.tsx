@@ -3,31 +3,36 @@ import { Heart, Star, Crown } from "lucide-react";
 
 const timelineItems = [
   {
-    month: "Month 1",
+    date: "March 8th",
+    title: "Made It Official",
     icon: Heart,
     color: "bg-rose-gold",
-    description: "First sparks, nervous butterflies, and the beginning of something magical",
-    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=200",
-    alt: "Romantic handwritten letter",
+    description: "The day we became official and started our beautiful journey together",
     side: "left"
   },
   {
-    month: "Month 2",
+    date: "Month 1",
+    title: "First Month Magic",
     icon: Star,
     color: "bg-warm-purple",
-    description: "Growing closer, sharing dreams, and falling deeper in love",
-    image: "https://images.unsplash.com/photo-1543965170-4c01a586684e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=200",
-    alt: "Couple walking together",
+    description: "First sparks, nervous butterflies, and the beginning of something magical",
     side: "right"
   },
   {
-    month: "Month 3",
+    date: "Month 2",
+    title: "Growing Closer",
+    icon: Star,
+    color: "bg-warm-purple",
+    description: "Growing closer, sharing dreams, and falling deeper in love",
+    side: "left"
+  },
+  {
+    date: "Month 3",
+    title: "Three Month Anniversary",
     icon: Crown,
     color: "bg-deep-rose",
     description: "Celebrating our love and looking forward to forever together",
-    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=200",
-    alt: "Anniversary celebration with flowers",
-    side: "left"
+    side: "right"
   }
 ];
 
@@ -69,46 +74,36 @@ export default function TimelineSection() {
                   {item.side === "left" ? (
                     <>
                       <div className="w-1/2 pr-8 text-right">
-                        <h3 className="font-playfair text-2xl font-semibold text-deep-rose mb-2">
-                          {item.month}
+                        <h3 className="font-playfair text-2xl font-semibold text-deep-rose mb-1">
+                          {item.title}
                         </h3>
+                        <p className="text-lg font-medium text-gray-600 mb-2">{item.date}</p>
                         <p className="text-gray-700">{item.description}</p>
                       </div>
                       <div 
-                        className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
+                        className={`absolute left-1/2 transform -translate-x-1/2 w-12 h-12 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
                       >
-                        <Icon className="w-4 h-4 text-white" fill="currentColor" />
+                        <Icon className="w-6 h-6 text-white" fill="currentColor" />
                       </div>
                       <div className="w-1/2 pl-8">
-                        <motion.img 
-                          src={item.image}
-                          alt={item.alt}
-                          className="rounded-xl shadow-lg w-full h-32 object-cover"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                        />
+                        {/* Empty space for balance */}
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="w-1/2 pr-8">
-                        <motion.img 
-                          src={item.image}
-                          alt={item.alt}
-                          className="rounded-xl shadow-lg w-full h-32 object-cover ml-auto"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
-                        />
+                        {/* Empty space for balance */}
                       </div>
                       <div 
-                        className={`absolute left-1/2 transform -translate-x-1/2 w-8 h-8 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
+                        className={`absolute left-1/2 transform -translate-x-1/2 w-12 h-12 ${item.color} rounded-full border-4 border-white shadow-lg flex items-center justify-center`}
                       >
-                        <Icon className="w-4 h-4 text-white" fill="currentColor" />
+                        <Icon className="w-6 h-6 text-white" fill="currentColor" />
                       </div>
                       <div className="w-1/2 pl-8">
-                        <h3 className="font-playfair text-2xl font-semibold text-deep-rose mb-2">
-                          {item.month}
+                        <h3 className="font-playfair text-2xl font-semibold text-deep-rose mb-1">
+                          {item.title}
                         </h3>
+                        <p className="text-lg font-medium text-gray-600 mb-2">{item.date}</p>
                         <p className="text-gray-700">{item.description}</p>
                       </div>
                     </>

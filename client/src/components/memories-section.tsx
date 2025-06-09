@@ -32,10 +32,10 @@ const memories = [
     route: "/memories/spicy-atlas"
   },
   {
-    icon: MapPin,
-    title: "Traveling",
-    description: "All the places we've explored together",
-    color: "bg-gradient-to-br from-blue-400 to-purple-500",
+    icon: Heart,
+    title: "About Shaina",
+    description: "Everything I love about my amazing girlfriend",
+    color: "bg-gradient-to-br from-pink-400 to-purple-500",
     route: "/memories/traveling"
   },
   {
