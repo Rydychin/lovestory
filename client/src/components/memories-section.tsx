@@ -1,35 +1,49 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Heart, MapPin, List, Camera, Moon, Zap } from "lucide-react";
 
 const memories = [
   {
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Our First Date",
-    description: "The day everything began. Nervous smiles and endless conversation."
+    icon: Camera,
+    title: "My Cutie",
+    description: "All the adorable moments that make my heart melt",
+    color: "bg-rose-gold",
+    route: "/memories/cutie"
   },
   {
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Hand in Hand",
-    description: "Finding comfort and strength in your touch."
+    icon: Moon,
+    title: "Sleeping Beauty",
+    description: "Peaceful moments and cozy times together",
+    color: "bg-warm-purple",
+    route: "/memories/sleeping-beauty"
   },
   {
-    image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Endless Laughter",
-    description: "You make every day brighter with your beautiful smile."
+    icon: Zap,
+    title: "Power Couple",
+    description: "When we're unstoppable together",
+    color: "bg-deep-rose",
+    route: "/memories/power-couple"
   },
   {
-    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Adventures Together",
-    description: "Every journey becomes magical when you're by my side."
+    icon: Heart,
+    title: "The Spicy Love Atlas",
+    description: "Our adventurous love map checklist",
+    color: "bg-gradient-to-br from-red-400 to-pink-500",
+    route: "/memories/spicy-atlas"
   },
   {
-    image: "https://images.unsplash.com/photo-1493655161922-ef98929de9d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Little Notes",
-    description: "Sweet messages that make my heart skip a beat."
+    icon: MapPin,
+    title: "Traveling",
+    description: "All the places we've explored together",
+    color: "bg-gradient-to-br from-blue-400 to-purple-500",
+    route: "/memories/traveling"
   },
   {
-    image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400",
-    title: "Celebrating Us",
-    description: "Every milestone deserves to be cherished forever."
+    icon: List,
+    title: "Bucket List",
+    description: "Dreams and adventures we want to share",
+    color: "bg-gradient-to-br from-green-400 to-teal-500",
+    route: "/memories/bucket-list"
   }
 ];
 
@@ -52,33 +66,32 @@ export default function MemoriesSection() {
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {memories.map((memory, index) => (
-            <motion.div 
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg photo-hover"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-            >
-              <div className="overflow-hidden">
-                <motion.img 
-                  src={memory.image}
-                  alt={memory.title}
-                  className="w-full h-64 object-cover"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-playfair text-xl font-semibold text-deep-rose mb-2">
-                  {memory.title}
-                </h3>
-                <p className="text-gray-600">{memory.description}</p>
-              </div>
-            </motion.div>
-          ))}
+          {memories.map((memory, index) => {
+            const Icon = memory.icon;
+            return (
+              <Link key={index} href={memory.route}>
+                <motion.div 
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg photo-hover cursor-pointer group"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className={`${memory.color} h-32 flex items-center justify-center relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+                    <Icon className="w-16 h-16 text-white relative z-10" />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-playfair text-xl font-semibold text-deep-rose mb-2">
+                      {memory.title}
+                    </h3>
+                    <p className="text-gray-600">{memory.description}</p>
+                  </div>
+                </motion.div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

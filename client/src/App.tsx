@@ -7,12 +7,36 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 import PasswordGate from "@/components/password-gate";
+import SpicyAtlas from "@/pages/spicy-atlas";
+import CutieMemories from "@/pages/cutie-memories";
+import SleepingBeauty from "@/pages/sleeping-beauty";
+import PowerCouple from "@/pages/power-couple";
+import Traveling from "@/pages/traveling";
+import BucketList from "@/pages/bucket-list";
 
 function Router({ onLogout }: { onLogout: () => void }) {
   return (
     <Switch>
       <Route path="/">
         <Home onLogout={onLogout} />
+      </Route>
+      <Route path="/memories/spicy-atlas">
+        <SpicyAtlas />
+      </Route>
+      <Route path="/memories/cutie">
+        <CutieMemories />
+      </Route>
+      <Route path="/memories/sleeping-beauty">
+        <SleepingBeauty />
+      </Route>
+      <Route path="/memories/power-couple">
+        <PowerCouple />
+      </Route>
+      <Route path="/memories/traveling">
+        <Traveling />
+      </Route>
+      <Route path="/memories/bucket-list">
+        <BucketList />
       </Route>
       <Route component={NotFound} />
     </Switch>

@@ -25,14 +25,7 @@ export default function LoveLetterSection() {
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {/* Vintage letter decoration */}
-          <div className="absolute top-6 right-6 opacity-10">
-            <img 
-              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=150" 
-              alt="Vintage love letter" 
-              className="w-32 h-24 object-cover rounded-lg" 
-            />
-          </div>
+          
           
           <div className="font-playfair text-lg md:text-xl leading-relaxed text-gray-800 space-y-6">
             <motion.p 
