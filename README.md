@@ -51,11 +51,6 @@ You need to have Node.js installed on your computer:
    - The website will be available at: `http://localhost:5000`
    - Open this URL in your browser
 
-### Default Settings
-
-- **Default password**: `ourlove2024`
-- **Port**: 5000
-- **Access**: Local only (perfect for privacy)
 
 ### Changing the Password
 
