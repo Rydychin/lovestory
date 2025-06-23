@@ -44,24 +44,24 @@ function Router({ onLogout }: { onLogout: () => void }) {
 }
 
 function App() {
-  const [hasAccess, setHasAccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [hasAccess, setHasAccess] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Check if this is the first load of the website
-    const isFirstLoad = !sessionStorage.getItem("hasLoadedBefore");
-    if (isFirstLoad) {
-      // First time loading the website, require password
-      setHasAccess(false);
-      sessionStorage.setItem("hasLoadedBefore", "true");
-    } else {
-      // Not first load, check if we have access
-      const accessGranted = localStorage.getItem("anniversary-access");
-      if (accessGranted === "granted") {
-        setHasAccess(true);
-      }
-    }
-    setIsLoading(false);
+    // const isFirstLoad = !sessionStorage.getItem("hasLoadedBefore");
+    // if (isFirstLoad) {
+    //   // First time loading the website, require password
+    //   setHasAccess(false);
+    //   sessionStorage.setItem("hasLoadedBefore", "true");
+    // } else {
+    //   // Not first load, check if we have access
+    //   const accessGranted = localStorage.getItem("anniversary-access");
+    //   if (accessGranted === "granted") {
+    //     setHasAccess(true);
+    //   }
+    // }
+    // setIsLoading(false);
   }, []);
 
   const handleAccessGranted = () => {
