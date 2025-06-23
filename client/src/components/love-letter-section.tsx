@@ -35,7 +35,7 @@ export default function LoveLetterSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              My Dearest Love,
+              My one and only,
             </motion.p>
             
             <motion.p
@@ -44,7 +44,7 @@ export default function LoveLetterSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              Three months ago, you walked into my life and turned everything upside down—in the most beautiful way possible. I never knew that 90 days could hold so much joy, laughter, and pure happiness until I started counting them with you.
+              Happy 3 months ❤️
             </motion.p>
             
             <motion.p
@@ -53,7 +53,7 @@ export default function LoveLetterSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              Every morning I wake up with a smile because I know I get to talk to you. Every sunset reminds me of the golden glow in your eyes when you laugh at my terrible jokes. You've made me believe in love songs, in fairy tales, and in the magic that happens when two hearts decide to dance together.
+              It feels both surreal and so natural that we've already spent three months together. Surreal because time has flown and I still remember how nervous and excited I was when things first began. And yet, it feels so natural because being with you feels like coming home. There's a kind of comfort in us that I've never experienced before like we just fit.
             </motion.p>
             
             <motion.p
@@ -62,7 +62,7 @@ export default function LoveLetterSection() {
               transition={{ duration: 0.8, delay: 1.0 }}
               viewport={{ once: true }}
             >
-              I love the way you scrunch your nose when you're thinking, how you always steal my hoodies (and look infinitely better in them), and how you make even the simplest moments feel like adventures. You've taught me that love isn't just a feeling—it's a choice we make every day, and I choose you, always.
+              Every moment we've shared has added something beautiful to my life. Whether we're out making memories on little trips, cuddling during our slow days, or just laughing over something dumb on FaceTime, it all means something to me. Our cuddles, the way you look at me, how we fall asleep side by side,it's all become part of the rhythm of my days, and I wouldn't trade that for anything.
             </motion.p>
             
             <motion.p
@@ -71,28 +71,45 @@ export default function LoveLetterSection() {
               transition={{ duration: 0.8, delay: 1.2 }}
               viewport={{ once: true }}
             >
-              These three months have been the beginning of something extraordinary. I can't wait to create a million more memories with you, to laugh until our stomachs hurt, to hold your hand through every season of life.
+              You've shown me what it feels like to be loved in a way that's gentle, steady, and real. And I hope I've made you feel that too, even if I know I don't always say the right things. I know I struggle sometimes to express how I feel in the moment, especially when I get overwhelmed. But please know this: my love for you is constant, and so is my commitment to learning how to love you better with more patience, more honesty, and more intention.
             </motion.p>
             
-            <motion.p 
-              className="text-deep-rose font-semibold"
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
               viewport={{ once: true }}
             >
-              Thank you for being my person, my safe place, my greatest adventure.
+              You've taught me how special it is to be fully present with someone to listen, to care, to grow together. And ever since we've been together, I've realized how much I want to keep growing with you. I look forward to every new chapter,more cuddles, more late night talks, more silly moments and serious ones. More of us.
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              viewport={{ once: true }}
+            >
+              Thank you for letting me into your heart and into your world. You mean so much to me baby. I love you in a way that feels peaceful, passionate, and lasting.
+            </motion.p>
+            
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              viewport={{ once: true }}
+            >
+              Here's to everything we've shared so far, and everything we've yet to discover.
             </motion.p>
             
             <motion.p 
               className="text-right font-semibold text-deep-rose text-2xl mt-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
+              transition={{ duration: 0.8, delay: 2.0 }}
               viewport={{ once: true }}
             >
-              All my love,<br />
-              <span className="font-playfair text-3xl">Your devoted heart ❤️</span>
+              Yours truly,<br />
+              <span className="font-playfair text-3xl">Rydy</span>
             </motion.p>
           </div>
           

@@ -15,7 +15,7 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   // You can change this password to whatever you want
-  const correctPassword = "ourlove2024";
+  const correctPassword = "inthearena";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +28,6 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
       const storedPassword = localStorage.getItem("anniversary-password") || correctPassword;
       
       if (password === storedPassword) {
-        localStorage.setItem("anniversary-access", "granted");
         onAccessGranted();
       } else {
         setIsError(true);
@@ -55,7 +54,7 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
           </motion.div>
           
           <h1 className="font-playfair text-3xl font-bold text-deep-rose mb-2">
-            Our Private Space
+            Shaina and Ryan's Private Space
           </h1>
           <p className="text-gray-600">
             Enter the password to access our love story
@@ -93,7 +92,7 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              Incorrect password. Try again! 💕
+              Incorrect password. Try again loser! 💕
             </motion.p>
           )}
 
@@ -117,7 +116,7 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-500">
-            Made with love for someone special 💖
+            Made for the love of my life 💖
           </p>
         </div>
       </motion.div>
@@ -127,7 +126,7 @@ export default function PasswordGate({ onAccessGranted }: PasswordGateProps) {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-rose-gold/20"
+            className="absolute text-pink-400/20"
             initial={{
               x: Math.random() * window.innerWidth,
               y: window.innerHeight + 50,

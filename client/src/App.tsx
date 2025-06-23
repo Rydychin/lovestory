@@ -48,20 +48,31 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user has already entered the correct password
-    const accessGranted = localStorage.getItem("anniversary-access");
-    if (accessGranted === "granted") {
-      setHasAccess(true);
+    // Check if this is the first load of the website
+    const isFirstLoad = !sessionStorage.getItem("hasLoadedBefore");
+    if (isFirstLoad) {
+      // First time loading the website, require password
+      setHasAccess(false);
+      sessionStorage.setItem("hasLoadedBefore", "true");
+    } else {
+      // Not first load, check if we have access
+      const accessGranted = localStorage.getItem("anniversary-access");
+      if (accessGranted === "granted") {
+        setHasAccess(true);
+      }
     }
     setIsLoading(false);
   }, []);
 
   const handleAccessGranted = () => {
     setHasAccess(true);
+    localStorage.setItem("anniversary-access", "granted");
   };
 
   const handleLogout = () => {
     setHasAccess(false);
+    localStorage.removeItem("anniversary-access");
+    sessionStorage.removeItem("hasLoadedBefore");
   };
 
   if (isLoading) {

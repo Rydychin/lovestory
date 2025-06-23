@@ -2,12 +2,18 @@ import { motion } from "framer-motion";
 import { Heart, Cake, Coffee, Star, Gift, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 export default function AboutShaina() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const personalInfo = {
     name: "Shaina Nu-Chee Cha",
     birthday: "February 16th",
-    shoeSize: "Women's 4.5 / Kids 2-3"
+    shoeSize: "Women's 4.5 / Kids 2-3",
+    height: "5 ft"
   };
 
   const favoriteSweets = [
@@ -92,7 +98,7 @@ export default function AboutShaina() {
             <Star className="w-6 h-6 text-pink-600" />
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Personal Details</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
               <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Full Name</h3>
               <p className="text-pink-600 dark:text-pink-400">{personalInfo.name}</p>
@@ -100,6 +106,10 @@ export default function AboutShaina() {
             <div className="text-center">
               <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Birthday</h3>
               <p className="text-pink-600 dark:text-pink-400">{personalInfo.birthday}</p>
+            </div>
+            <div className="text-center">
+              <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Height</h3>
+              <p className="text-pink-600 dark:text-pink-400">{personalInfo.height}</p>
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-gray-800 dark:text-white mb-2">Shoe Size</h3>

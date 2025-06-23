@@ -2,41 +2,46 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Zap, Heart } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const powerCouplePhotos = [
   {
-    src: "https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img13.jpeg",
     caption: "Conquering challenges together",
     date: "Team unstoppable"
   },
   {
-    src: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img14.jpeg",
     caption: "Supporting each other's dreams",
     date: "Power partnership"
   },
   {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img15.jpeg",
     caption: "Taking on the world together",
     date: "Dynamic duo"
   },
   {
-    src: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img16.jpeg",
     caption: "Celebrating our victories",
     date: "Success shared"
   },
   {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img17.jpeg",
     caption: "Motivating each other daily",
     date: "Strength in unity"
   },
   {
-    src: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/power-couple/img18.jpeg",
     caption: "Making things happen together",
     date: "Unstoppable force"
   }
 ];
 
 export default function PowerCouple() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -79,6 +84,21 @@ export default function PowerCouple() {
                   src={photo.src}
                   alt={photo.caption}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: index === 0 ? 'center 50%' : 
+                                  index === 1 ? 'center 35%' : 
+                                  index === 2 ? 'center 50%' : 
+                                  index === 3 ? 'center 50%' : 
+                                  index === 4 ? 'center 70%' : 
+                                  index === 5 ? 'center 30%' : 'center',
+                    transform: index === 0 ? 'scale(1)' : 
+                             index === 1 ? 'scale(1)' : 
+                             index === 2 ? 'scale(1)' : 
+                             index === 3 ? 'scale(1)' : 
+                             index === 4 ? 'scale(1)' : 
+                             index === 5 ? 'scale(1)' : 'none'
+                  }}
                 />
               </div>
               <div className="p-6">

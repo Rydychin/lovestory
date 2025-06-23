@@ -22,7 +22,7 @@ export default function SettingsModal({ onLogout }: SettingsModalProps) {
     setMessage("");
     
     // Get current stored password (in a real app, this would be handled server-side)
-    const storedPassword = localStorage.getItem("anniversary-password") || "ourlove2024";
+    const storedPassword = localStorage.getItem("anniversary-password") || "inthearena";
     
     if (currentPassword !== storedPassword) {
       setMessage("Current password is incorrect");

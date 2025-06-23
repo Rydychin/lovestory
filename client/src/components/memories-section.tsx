@@ -20,14 +20,14 @@ const memories = [
   {
     icon: Zap,
     title: "Power Couple",
-    description: "When we're unstoppable together",
+    description: "When we're together we are an unstoppable force",
     color: "bg-deep-rose",
     route: "/memories/power-couple"
   },
   {
     icon: Heart,
     title: "The Spicy Love Atlas",
-    description: "Our adventurous love map checklist",
+    description: "Our evergrowing adventurous love map checklist",
     color: "bg-gradient-to-br from-red-400 to-pink-500",
     route: "/memories/spicy-atlas"
   },
@@ -41,7 +41,7 @@ const memories = [
   {
     icon: List,
     title: "Bucket List",
-    description: "Dreams and adventures we want to share",
+    description: "Dreams and adventures we want to go on together",
     color: "bg-gradient-to-br from-green-400 to-teal-500",
     route: "/memories/bucket-list"
   }

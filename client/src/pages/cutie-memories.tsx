@@ -2,42 +2,47 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Camera, Heart } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 // These are placeholder images - replace with your actual photos
 const cutiePhotos = [
   {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Your adorable sleepy face in the morning",
-    date: "Every morning"
+    src: "/photos/cutie/img1.jpeg",
+    caption: "Your adorable sleepy face",
+    date: "Every night"
   },
   {
-    src: "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "When you scrunch your nose thinking",
+    src: "/photos/cutie/img2.jpeg",
+    caption: "When you scrunch your nose",
     date: "Daily cuteness"
   },
   {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/cutie/img3.PNG",
     caption: "Your beautiful smile that lights up my world",
     date: "Always"
   },
   {
-    src: "https://images.unsplash.com/photo-1493655161922-ef98929de9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/cutie/img4.jpeg",
     caption: "Being silly together",
-    date: "Random Tuesday"
+    date: "Random photos"
   },
   {
-    src: "https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/cutie/img5.jpeg",
     caption: "Your cute laugh when I tell bad jokes",
     date: "Every day"
   },
   {
-    src: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    src: "/photos/cutie/img6.jpeg",
     caption: "The way you look at me",
     date: "Heart melting moment"
   }
 ];
 
 export default function CutieMemories() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -80,6 +85,11 @@ export default function CutieMemories() {
                   src={photo.src}
                   alt={photo.caption}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: index === 1 ? 'center 75%' : index === 2 ? 'center 10%' : index === 3 ? 'center 50%' : index === 4 ? 'right 35%' : index === 5 ? 'center 40%' : 'center',
+                    transform: index === 1 ? 'scale(1)' : index === 2 ? 'scale(1)' : index === 3 ? 'scale(1)' : index === 4 ? 'scale(1)' : index === 5 ? 'scale(1)' : 'none'
+                  }}
                 />
               </div>
               <div className="p-6">

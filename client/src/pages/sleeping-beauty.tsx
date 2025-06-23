@@ -2,41 +2,46 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Moon, Heart } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const sleepingPhotos = [
   {
-    src: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Peaceful morning cuddles",
-    date: "Weekend bliss"
+    src: "/photos/sleeping/img7.jpeg",
+    caption: "Sweet dreams together",
+    date: "afternoon cuddles"
   },
   {
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Cozy movie night sleepiness",
-    date: "Netflix and nap"
+    src: "/photos/sleeping/img8.jpeg",
+    caption: "Morning light on your face",
+    date: "Early sunrise"
   },
   {
-    src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Sunday afternoon naps together",
-    date: "Perfect lazy day"
+    src: "/photos/sleeping/img9.jpeg",
+    caption: "Afternoon nap time",
+    date: "Lazy weekends"
   },
   {
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Your sleepy smile in the morning",
-    date: "Every beautiful morning"
+    src: "/photos/sleeping/img10.jpeg",
+    caption: "Sleepy night time",
+    date: "Cozy evenings"
   },
   {
-    src: "https://images.unsplash.com/photo-1505489304835-4b991ba8b887?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Wrapped up in blankets together",
-    date: "Cold night warmth"
+    src: "/photos/sleeping/img11.jpeg",
+    caption: "Peaceful slumber",
+    date: "Sweet moments"
   },
   {
-    src: "https://images.unsplash.com/photo-1517445312882-bc9910bb7e4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    caption: "Peaceful sleep after long talks",
-    date: "Heart to heart nights"
+    src: "/photos/sleeping/img12.jpeg",
+    caption: "Dreaming together",
+    date: "Perfect nights"
   }
 ];
 
 export default function SleepingBeauty() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -79,6 +84,21 @@ export default function SleepingBeauty() {
                   src={photo.src}
                   alt={photo.caption}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: index === 0 ? 'center 70%' : 
+                                  index === 1 ? 'center 60%' : 
+                                  index === 2 ? 'center 90%' : 
+                                  index === 3 ? 'center 45%' : 
+                                  index === 4 ? 'center 75%' : 
+                                  index === 5 ? 'center 70%' : 'center',
+                    transform: index === 0 ? 'scale(1)' : 
+                             index === 1 ? 'scale(1)' : 
+                             index === 2 ? 'scale(1)' : 
+                             index === 3 ? 'scale(1)' : 
+                             index === 4 ? 'scale(1)' : 
+                             index === 5 ? 'scale(1)' : 'none'
+                  }}
                 />
               </div>
               <div className="p-6">

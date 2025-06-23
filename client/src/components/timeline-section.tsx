@@ -11,23 +11,23 @@ const timelineItems = [
     side: "left"
   },
   {
-    date: "Month 1",
+    date: "April 8th",
     title: "First Month Magic",
     icon: Star,
     color: "bg-warm-purple",
-    description: "First sparks, nervous butterflies, and the beginning of something magical",
+    description: "First sparks a the beginning of something magical",
     side: "right"
   },
   {
-    date: "Month 2",
-    title: "Growing Closer",
+    date: "May 8th",
+    title: "Second Month Anniversary",
     icon: Star,
     color: "bg-warm-purple",
     description: "Growing closer, sharing dreams, and falling deeper in love",
     side: "left"
   },
   {
-    date: "Month 3",
+    date: "June 8th",
     title: "Three Month Anniversary",
     icon: Crown,
     color: "bg-deep-rose",
